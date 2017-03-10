@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Complex_Component Name="Complejillo">
+    <Composition>
+        <SC>SC_Ball_1_N</SC>
+        <SC>SC_Ball_1_S</SC>
+    </Composition>
+    <CC_States>
+        <CC_State Active="True" ID="0" Visible="True">
+            <Status>
+                <SC Active="True" Name="SC_Ball_1_N" Visible="True"/>
+                <SC Active="False" Name="SC_Ball_1_S" Visible="False"/>
+            </Status>
+            <Dialog_State>
+                <Self_Evt Component="SC_Ball_1_N" End_State="1" Event="" ID="0" Ini_State="0">
+                    <Preconditions>
+                        <Pre_Cond Component="cc2" State="1"/>
+                    </Preconditions>
+                </Self_Evt>
+            </Dialog_State>
+        </CC_State>
+        <CC_State Active="True" ID="1" Visible="True">
+            <Status>
+                <SC Active="False" Name="SC_Ball_1_N" Visible="False"/>
+                <SC Active="False" Name="SC_Ball_1_N" Visible="False"/>
+            </Status>
+            <Dialog_State>
+                <Self_Evt Component="SC_Ball_1_S" End_State="0" Event="" ID="0" Ini_State="1">
+                    <Preconditions/>
+                </Self_Evt>
+            </Dialog_State>
+        </CC_State>
+    </CC_States>
+    <External_Events>
+        <Delegate_Actions>
+            <Trigger_DA ID="0" SELF_STATE="1" TO="" Trigger_DE_ID="2"/>
+            <Trigger_DA ID="1" SELF_STATE="2" TO="" Trigger_DE_ID="1"/>
+        </Delegate_Actions>
+        <Delegate_Events>
+            <Trigger_DE Component="" End_State="2" ID="0" Ini_State="1"/>
+            <Trigger_DE Component="" End_State="1" ID="1" Ini_State="2"/>
+        </Delegate_Events>
+    </External_Events>
+</Complex_Component>
